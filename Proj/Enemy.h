@@ -1,9 +1,0 @@
-#pragma once
-#include "Character.h"
-
-class Enemy : public Character
-{
-public:
-    void Turn(Character* player);
-};
-#pragma once

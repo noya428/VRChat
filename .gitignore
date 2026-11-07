@@ -1,0 +1,11 @@
+*.cpp
+/Proj/Main.cpp
+/Proj/Player.h
+/Proj/Main.cpp
+/Proj/Main.cpp
+/Proj/Player.cpp
+/Proj/Character.h
+/Proj/Enemy.h
+/Proj/Player.h
+/Proj/Enemy.cpp
+/Proj/Character.cpp
