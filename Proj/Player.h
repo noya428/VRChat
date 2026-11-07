@@ -1,42 +1,15 @@
 #pragma once
-#include <iostream>
-using namespace std;
+#include "Character.h"
 
-class Player
+class Player : public Character
 {
 public:
-    // プレイヤーの手を入力
-    int SelectHand()
+    Player() : Character("Player")
     {
-        int hand;
-
-        cout << "じゃんけん！" << endl;
-        cout << "1: グー  2: チョキ  3: パー" << endl;
-        cout << "手を選んでください：";
-        cin >> hand;
-
-        // 入力チェック
-        while (hand < 1 || hand > 3)
-        {
-            cout << "1～3を入力してください：";
-            cin >> hand;
-        }
-
-        return hand;
     }
 
-    // 手を表示
-    void ShowHand(int hand)
+    void Attack() override
     {
-        cout << "プレイヤー：" << GetHandName(hand) << endl;
-    }
-
-    // 手の名前を取得
-    string GetHandName(int hand)
-    {
-        if (hand == 1) return "グー";
-        if (hand == 2) return "チョキ";
-        return "パー";
+        cout << "Playerは剣で攻撃した！" << endl;
     }
 };
-
