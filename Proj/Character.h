@@ -1,3 +1,4 @@
+
 #pragma once
 #include <iostream>
 #include <string>
@@ -5,21 +6,26 @@ using namespace std;
 
 class Character
 {
-protected:
+private:
+    // キャラクターの名前
     string name;
 
 public:
+    // コンストラクタ
     Character(string n)
     {
         name = n;
     }
 
-    // 名前を表示
-    void ShowName()
+    // 名前を取得
+    string GetName()
     {
-        cout << "キャラクター：" << name << endl;
+        return name;
     }
 
-    // 攻撃処理（子クラスで変更する）
-    virtual void Attack() = 0;
+    // 攻撃処理（子クラスでオーバーライド可能）
+    virtual void Attack()
+    {
+        cout << "攻撃した！" << endl;
+    }
 };

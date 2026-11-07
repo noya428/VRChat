@@ -1,32 +1,18 @@
-
 #include <iostream>
-#include "Player.h"
-#include "Enemy.h"
-#include "Boss.h"
+#include "Character.h"
 
 using namespace std;
 
 int main()
 {
-    Player player;
-    Enemy enemy;
-    Boss boss;
+    // CharacterƒIƒuƒWƒFƒNƒg‚ğì¬
+    Character character("Player");
 
-    cout << "yPlayerz" << endl;
-    player.ShowName();
-    player.Attack();
+    // –¼‘O‚ğ•\¦
+    cout << "–¼‘OF" << character.GetName() << endl;
 
-    cout << endl;
-
-    cout << "yEnemyz" << endl;
-    enemy.ShowName();
-    enemy.Attack();
-
-    cout << endl;
-
-    cout << "yBossz" << endl;
-    boss.ShowName();
-    boss.Attack();
+    // UŒ‚
+    character.Attack();
 
     return 0;
 }
