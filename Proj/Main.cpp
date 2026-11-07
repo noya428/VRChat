@@ -1,18 +1,19 @@
+
 #include <iostream>
 #include "Character.h"
+#include "Wizard.h"
 
 using namespace std;
 
 int main()
 {
-    // Characterオブジェクトを作成
-    Character character("Player");
+    Wizard wizard;
 
-    // 名前を表示
-    cout << "名前：" << character.GetName() << endl;
+    Character* character = &wizard;
 
-    // 攻撃
-    character.Attack();
+    cout << "名前：" << character->GetName() << endl;
+
+    character->Attack();
 
     return 0;
 }
