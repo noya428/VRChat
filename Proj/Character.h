@@ -1,26 +1,25 @@
 #pragma once
+#include <iostream>
+#include <string>
+using namespace std;
 
 class Character
 {
 protected:
-    int hp;
-    int attack;
-    int defense;
-    int evade;
-
-    static const int MAX_HP = 100;
-    static const int MIN_VALUE = 1;
-    static const int MAX_VALUE = 20;
-    static const int MAX_RANDOM = 12;
+    string name;
 
 public:
-    Character();
+    Character(string n)
+    {
+        name = n;
+    }
 
-    int GetHP();
+    // 名前を表示
+    void ShowName()
+    {
+        cout << "キャラクター：" << name << endl;
+    }
 
-    void AttackCharacter(Character* target);
-    void Heal();
-
-    bool IsAlive();
-    void ShowStatus();
+    // 攻撃処理（子クラスで変更する）
+    virtual void Attack() = 0;
 };

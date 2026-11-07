@@ -1,35 +1,23 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-using namespace std;
-
 #include "Player.h"
-#include "CPU.h"
-#include "Judge.h"
+#include "Enemy.h"
+#include "Boss.h"
+#include "BattleManager.h"
+
+using namespace std;
 
 int main()
 {
-    srand((unsigned int)time(NULL));
-
     Player player;
-    CPU cpu;
-    Judge judge;
+    Enemy enemy;
+    Boss boss;
 
-    // クラスのポインタ
-    Player* pPlayer = &player;
-    CPU* pCPU = &cpu;
-    Judge* pJudge = &judge;
+    BattleManager manager;
 
-    // 手を選択
-    int playerHand = pPlayer->SelectHand();
-    int cpuHand = pCPU->SelectHand();
-
-    // 手を表示
-    pPlayer->ShowHand(playerHand);
-    pCPU->ShowHand(cpuHand);
-
-    // 勝敗判定
-    pJudge->CheckResult(playerHand, cpuHand);
+    // 各キャラクターの戦闘を開始
+    manager.StartBattle(&player);
+    manager.StartBattle(&enemy);
+    manager.StartBattle(&boss);
 
     return 0;
 }

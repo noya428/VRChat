@@ -4,6 +4,12 @@
 class Enemy : public Character
 {
 public:
-    void Turn(Character* player);
+    Enemy() : Character("Enemy")
+    {
+    }
+
+    void Attack() override
+    {
+        cout << "Enemyはかみつき攻撃をした！" << endl;
+    }
 };
-#pragma once
