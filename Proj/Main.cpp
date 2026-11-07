@@ -1,19 +1,10 @@
-
-#include <iostream>
-#include "Character.h"
-#include "Wizard.h"
-
-using namespace std;
+#include "Game.h"
 
 int main()
 {
-    Wizard wizard;
+    Game game;
 
-    Character* character = &wizard;
-
-    cout << "–¼‘OF" << character->GetName() << endl;
-
-    character->Attack();
+    game.Start();
 
     return 0;
 }
